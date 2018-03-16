@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { QuizNavigator } from './src/navigation/QuizNavigator';
 
 class App extends Component {

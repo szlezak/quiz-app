@@ -1,11 +1,11 @@
 export const colors = {
-  white: '#ffffff',
-  lightGreen: '#b3c100', //Rio Grande
-  darkGreen: '#34675C', //Stromboli
-  gray: '#B7B8B6', //Green Spring
-  mildGray: '#D3D4D3', //Pumic
-  nutBrown: '#8f6a33', //Potters Clay
-  winningGreen: '#5d9121', //Olive Drab
-  loosingRed: '#c12713', //Thunderbird
+  greenSpring: '#B7B8B6',
   mineShaft: '#212121',
+  oliveDrab: '#5D9121',
+  pottersClay: '#8F6A33',
+  pumic: '#D3D4D3',
+  rioGrande: '#B3C100',
+  stromboli: '#34675C',
+  thunderbird: '#C12713',
+  white: '#FFFFFF',
 };
