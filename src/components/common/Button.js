@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
 class Button extends Component {
   render() {
     const { onPress, text } = this.props;
+
     return (
       <TouchableOpacity
         style={styles.button}

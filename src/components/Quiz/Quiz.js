@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import * as Progress from 'react-native-progress';
+import ProgressCircle from 'react-native-progress/Circle';
 
 import Answer from './Answer';
 import Results from '../Results/Results';
@@ -99,7 +99,7 @@ class Quiz extends Component {
         <View style={styles.upperBox} />
         <View style={styles.lowerBox}>
           <View style={styles.titleContainer}>
-            <Progress.Circle progress={progress} style={styles.progress} borderWidth={0} color={colors.lightGreen} size={ 80 } thickness={6} />
+            <ProgressCircle progress={progress} style={styles.progress} borderWidth={0} color={colors.lightGreen} size={ 80 } thickness={6} />
             <Text style={styles.progressText}>{`${progressIndex}/${total}`}</Text>
             <Text style={styles.titleText}>{title}</Text>
           </View>

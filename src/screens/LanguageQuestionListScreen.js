@@ -5,10 +5,8 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Icon } from 'react-native-elements';
 
 import { colors } from '../constants/colors';
-import Button from '../components/common/Button';
 
 const styles = StyleSheet.create({
   container: {
@@ -29,7 +27,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   questionText: {
-    color: '#212121',
+    color: colors.mineShaft,
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -87,11 +85,9 @@ class LanguageQuestionListScreen extends Component {
 
     return (
       <ScrollView style={styles.container}>
-        {
-          questions.map(question =>
-            this.renderQuestion(question)
-          )
-        }
+        {questions.map(question =>
+          this.renderQuestion(question)
+        )}
       </ScrollView>
     );
   }

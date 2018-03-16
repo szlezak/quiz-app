@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
+import FontAwesome, { Icons } from 'react-native-fontawesome';
+import { Icon } from 'react-native-elements';
+import { NavigationActions } from 'react-navigation';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
 } from 'react-native';
-import { Icon } from 'react-native-elements';
-import { NavigationActions } from 'react-navigation';
+
 import Button from '../components/common/Button';
-import FontAwesome, { Icons } from 'react-native-fontawesome';
 import { colors } from '../constants/colors';
 
 const styles = StyleSheet.create({
@@ -69,20 +68,21 @@ class WelcomeScreen extends Component {
 
     navigation.navigate('List');
   }
+
   render() {
     return (
       <View style={styles.wrapper}>
         <View style={styles.upperBox}/>
         <View style={styles.lowerBox}>
           <View style={styles.icon}>
-            <FontAwesome style={{fontSize: 32}}>
-              {Icons.chevronLeft}
+            <FontAwesome style={{fontSize: 60, color: '#ffffff'}}>
+              {Icons.lightbulbO}
             </FontAwesome>
           </View>
           <View style={{ marginTop: 90 }}>
             <Text style={styles.title}>Welcome to the application</Text>
             <Button text='Start Quiz' onPress={this.handleQuizPress} />
-            <Button text='Show list' onPress={this.handleListPress} />
+            <Button text='Show List' onPress={this.handleListPress} />
           </View>
         </View>
       </View>

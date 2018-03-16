@@ -69,7 +69,7 @@ class Answer extends Component {
 
     return (
       <CheckBox
-        style={[styles.checkBox, {backgroundColor: this.getBackgroundColor(isRight)}]}
+        style={[styles.checkBox, { backgroundColor: this.getBackgroundColor(isRight) }]}
         onClick={this.handlePress}
         isChecked={isChecked}
         rightText={title}
