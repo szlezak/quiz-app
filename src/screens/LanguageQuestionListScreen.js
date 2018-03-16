@@ -8,36 +8,47 @@ import {
 import { Icon } from 'react-native-elements';
 
 import { colors } from '../constants/colors';
-import Accordion from 'react-native-collapsible/Accordion';
 import Button from '../components/common/Button';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFFFFF',//colors.darkGray,
-    flex: 1,
     alignSelf: 'stretch',
+    backgroundColor: colors.gray,
+    flex: 1,
   },
   wrapper: {
     alignSelf: 'stretch',
-    paddingVertical: 10,
-    marginBottom: 5,
-    borderBottomWidth: 1,
-    borderColor: '#BDBDBD',//colors.white,
+    flex: 1,
+    margin: 10,
+  },
+  questionContainer: {
+    backgroundColor: colors.mildGray,
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5,
+    flex: 1,
+    padding: 10,
   },
   questionText: {
-    textAlign: 'center',
+    color: '#212121',
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#212121',//colors.white,
+    textAlign: 'center',
+  },
+  answerContainer: {
+    backgroundColor: colors.nutBrown,
+    borderBottomLeftRadius: 5,
+    borderBottomRightRadius: 5,
+    flex: 3,
+    padding: 20,
   },
   answerText: {
+    color: colors.white,
     fontSize: 16,
-    color: '#757575',//colors.white,
     textAlign: 'justify',
   },
   errorText: {
+    color: colors.white,
     fontSize: 16,
-    color: '#757575',//colors.white,
     textAlign: 'center',
   },
 });
@@ -48,8 +59,12 @@ class LanguageQuestionListScreen extends Component {
 
     return (
       <View style={styles.wrapper} key={questionText}>
-        <Text style={styles.questionText}>{questionText}</Text>
-        <Text style={styles.answerText}>{`\u2022 ${answerText} \u2022`}</Text>
+        <View style={styles.questionContainer}>
+          <Text style={styles.questionText}>{questionText}</Text>
+        </View>
+        <View style={styles.answerContainer}>
+          <Text style={styles.answerText}>{`${answerText}`}</Text>
+        </View>
       </View>
     );
   }

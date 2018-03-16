@@ -1,9 +1,61 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import * as Progress from 'react-native-progress';
 
 import Answer from './Answer';
 import Results from '../Results/Results';
+import { colors } from '../../constants/colors';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  upperBox: {
+    backgroundColor: colors.darkGreen,
+    flex: 1,
+  },
+  lowerBox: {
+    backgroundColor: colors.gray,
+    flex: 2,
+    paddingTop: 130,
+    position: 'relative',
+  },
+  titleContainer: {
+    alignItems: 'center',
+    backgroundColor: colors.mildGray,
+    borderRadius: 5,
+    height: 200,
+    justifyContent: 'center',
+    left: 0,
+    marginHorizontal: 10,
+    position: 'absolute',
+    right: 0,
+    top: -100,
+  },
+  progressText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    position: 'absolute',
+    top: -10,
+  },
+  titleText: {
+    fontSize: 25,
+    textAlign: 'center',
+  },
+  progress: {
+    backgroundColor: colors.white,
+    borderRadius: 50,
+    position: 'absolute',
+    top: -40,
+  },
+  answerListContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+});
 
 class Quiz extends Component {
   constructor(props) {
@@ -43,28 +95,27 @@ class Quiz extends Component {
     }
 
     return (
-      <View style={{ flex: 1 }}>
-        <View style={{ flex: 1, backgroundColor: '#34675C' }} />
-        <View style={{ flex: 2, backgroundColor: '#B7B8B6', position: 'relative', paddingTop: 130}}>
-          <View style={{ backgroundColor: '#D3D4D3', marginHorizontal: 10, borderRadius: 5, position: 'absolute', left: 0, right: 0, top: -100, height: 200, alignItems: 'center', justifyContent: 'center'}}>
-            <Progress.Circle progress={progress} style={{ position: 'absolute', top: -40, backgroundColor: '#ffff', borderRadius: 50,  }} borderWidth={0} color={'#b3c100'} size={ 80 } thickness={6} />
-            <Text style={{ position: 'absolute', top: -10, fontSize: 20, fontWeight: 'bold' }}>{`${progressIndex}/${total}`}</Text>
-            <Text style={{ fontSize: 25, textAlign: 'center' }}>{title}</Text>
+      <View style={styles.container}>
+        <View style={styles.upperBox} />
+        <View style={styles.lowerBox}>
+          <View style={styles.titleContainer}>
+            <Progress.Circle progress={progress} style={styles.progress} borderWidth={0} color={colors.lightGreen} size={ 80 } thickness={6} />
+            <Text style={styles.progressText}>{`${progressIndex}/${total}`}</Text>
+            <Text style={styles.titleText}>{title}</Text>
           </View>
-
-      <View style={{ flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center' }}>
-          {options.map((option, index) =>{
-            return (
-              <Answer
-                key={index}
-                index={index}
-                option={option}
-                handleNextQuestion={this.incrementIndex}
-                handleAnswer={this.handleAnswer}
-              />
-            );
-          })}
-        </View>
+          <View style={styles.answerListContainer}>
+            {options.map((option, index) =>{
+              return (
+                <Answer
+                  key={index}
+                  index={index}
+                  option={option}
+                  handleNextQuestion={this.incrementIndex}
+                  handleAnswer={this.handleAnswer}
+                />
+              );
+            })}
+          </View>
         </View>
       </View>
     );
@@ -72,7 +123,7 @@ class Quiz extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.container}>
         {this.renderQuestion()}
       </View>
     );

@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import CheckBox from 'react-native-check-box'
 
+import { colors } from '../../constants/colors';
+
 const styles = StyleSheet.create({
-  title: {
-    fontSize: 24,
-    fontFamily: 'Cochin',
-    textAlign: 'center',
+  checkBox: {
+    alignItems: 'center',
+    borderRadius: 5,
+    height: 150,
+    justifyContent: 'center',
+    margin: 10,
+    paddingRight: 10,
+    paddingVertical: 10,
+    width: 150,
   },
 });
 
@@ -41,7 +48,7 @@ class Answer extends Component {
       return 'red';
     }
 
-    return '#8f6a33';
+    return colors.nutBrown;
   }
 
   handlePress = () => {
@@ -62,7 +69,7 @@ class Answer extends Component {
 
     return (
       <CheckBox
-        style={{backgroundColor: this.getBackgroundColor(isRight), borderRadius: 5, width: 150, height: 150, margin: 10, justifyContent: 'center', alignItems: 'center', paddingVertical: 10, paddingRight: 10 }}
+        style={[styles.checkBox, {backgroundColor: this.getBackgroundColor(isRight)}]}
         onClick={this.handlePress}
         isChecked={isChecked}
         rightText={title}

@@ -1,14 +1,19 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
+import { colors } from '../../constants/colors';
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
+    backgroundColor: '#B7B8B6',
+    flex: 1,
     justifyContent: 'center',
   },
   text: {
-    fontSize: 20,
+    color: colors.white,
+    fontSize: 26,
+    textAlign: 'center',
   },
 });
 

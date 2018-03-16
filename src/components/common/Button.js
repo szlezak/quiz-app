@@ -9,29 +9,32 @@ import { colors } from '../../constants/colors';
 
 const styles = StyleSheet.create({
   button: {
-    alignSelf: 'stretch',
     alignItems: 'center',
-    backgroundColor: '#03A9F4',//colors.anotherGreen,
-    paddingVertical: 15,
-    marginHorizontal: 15,
+    alignSelf: 'stretch',
+    backgroundColor: colors.lightGreen,
+    borderColor: colors.white,
+    borderRadius: 50,
+    borderWidth: 2,
+    marginHorizontal: 25,
     marginVertical: 5,
+    paddingVertical: 15,
   },
-  text: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: '#FFFFFF',//colors.white,
+  buttonText: {
+    color: colors.white,
+    fontSize: 22
   },
 });
 
 class Button extends Component {
   render() {
-    const { text, onPress } = this.props;
+    const { onPress, text } = this.props;
     return (
       <TouchableOpacity
         style={styles.button}
         onPress={onPress}
+        activeOpacity={0.7}
       >
-        <Text style={styles.text}>{text}</Text>
+        <Text style={styles.buttonText}>{text}</Text>
       </TouchableOpacity>
     );
   }
