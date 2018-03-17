@@ -1,8 +1,8 @@
-import { StackNavigator } from 'react-navigation';
 import React from 'react';
+import { StackNavigator } from 'react-navigation';
 
 import WelcomeScreen from '../screens/WelcomeScreen';
-// import QuizScreen from '../screens/QuizScreen';
+import QuizScreen from '../screens/QuizScreen';
 // import LanguageQuestionListScreen from '../screens/LanguageQuestionListScreen';
 // import LanguageListScreen from '../screens/LanguageListScreen';
 
@@ -15,12 +15,12 @@ export const QuizNavigator = StackNavigator({
       header: null,
     },
   },
-  // Quiz: {
-  //   screen: QuizScreen,
-  //   navigationOptions: {
-  //     header: null,
-  //   },
-  // },
+  Quiz: {
+    screen: QuizScreen,
+    navigationOptions: {
+      header: null,
+    },
+  },
   // List: {
   //   screen: LanguageListScreen,
   //   navigationOptions: {
